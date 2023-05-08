@@ -34,52 +34,44 @@ function makeChart(input) {
         ]
     },
     options: {
-        responsive: true,
-        title: {
-          display: true,
-          text: "Thống kê số lượng đối tượng dựa theo tuổi",
-          fontSize: 20,
+      responsive: true,
+      title: {
+        display: true,
+        text: "Thống kê số lượng đối tượng dựa theo tuổi",
+        fontSize: 20,
+      },
+      legend: {
+        display: true
+      },
+      animation: {
+        onComplete: () => {
+          delayed = true;
         },
-        legend: {
-          display: true
+        delay: (context) => {
+          let delay = 0;
+          if (context.type === 'data' && context.mode === 'default' && !delayed) {
+            delay = context.dataIndex * 300 + context.datasetIndex * 100;
+          }
+          return delay;
         },
-        animation: {
-          onComplete: () => {
-            delayed = true;
-          },
-          delay: (context) => {
-            let delay = 0;
-            if (context.type === 'data' && context.mode === 'default' && !delayed) {
-              delay = context.dataIndex * 300 + context.datasetIndex * 100;
-            }
-            return delay;
-          },
-        },
-        scales: {
-          xAxes: [{
-            position: 'bottom',
+      },
+      scales: {
+        xAxes: [{
+          position: 'bottom',
+          scaleLabel: {
+            display: true,
+            labelString: 'Tuổi'
+          }
+        }],
+        yAxes: [{
+            type: 'linear',
+            position: 'left',
             scaleLabel: {
               display: true,
-              labelString: 'Tuổi'
+              labelString: 'Số lượng'
             }
-          }],
-          yAxes: [{
-              type: 'linear',
-              position: 'left',
-              scaleLabel: {
-                display: true,
-                labelString: 'Số lượng'
-              }
-          }]
-        },
-        plugins: {
-          zoom: {
-            limits: {
-              y: {min: 0, max: 100},
-              y2: {min: -5, max: 5}
-            },
-          }
-        }
-    },
+        }]
+      }
+    }
   });
 }
