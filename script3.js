@@ -10,7 +10,6 @@ function showData(data) {
       region : data[i]["Region of residence"],
     });
   }
-  console.log(age_self_study);
   makeChart(age_self_study);
 }
 
