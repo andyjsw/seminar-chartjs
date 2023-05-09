@@ -52,13 +52,7 @@ function makeChart(input) {
   new Chart('chart3', {
     type: 'scatter',
     data: {
-      label: [
-        'Delhi-NCR',
-        'Outside Delhi-NCR'
-      ],
       datasets: [dataset],
-      backgroundColor: ['rgba(255, 99, 132, 0.2)', 'rgba(54, 162, 235, 0.2)'],
-
     },
     options: chartOptions
   });
