@@ -4,11 +4,13 @@
         <title>Chart js</title>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
         <script src="https://d3js.org/d3.v5.min.js"></script>
+        <script src="heatmap.js"></script>
         <script type='module' src="script0.js"></script>
         <script type='module' src="script1.js"></script>
         <script type='module' src="script2.js"></script>
         <script type='module' src="script3.js"></script>
         <script type="module" src="script4.js"></script>
+        <script type="module" src="script5.js"></script>
     </head>
     <body>
         <label for="cars">Chọn biểu đồ:</label>
@@ -18,12 +20,14 @@
             <option value="chart2">Biểu đồ đường/cột kết hợp</option>
             <option value="chart3">Biểu đồ diểm</option>
             <option value="chart4">Biểu đồ cột</option>
+            <option value="chart5">Heatmap</option>
         </select>
         <canvas id="chart0" width="500" height="220"></canvas>
         <canvas id="chart1" width="500" height="220"></canvas>
         <canvas id="chart2" width="500" height="220"></canvas>
         <canvas id="chart3" width="500" height="220"></canvas>
         <canvas id="chart4" width="500" height="220"></canvas>
+        <canvas id="chart5" width="800" height="400"></canvas>
 
         <script>
             let canvas0 = document.getElementById("chart0");
@@ -31,11 +35,13 @@
             let canvas2 = document.getElementById("chart2");
             let canvas3 = document.getElementById("chart3");
             let canvas4 = document.getElementById("chart4");
+            let canvas5 = document.getElementById("chart5");
             canvas0.style.display="none";
             canvas1.style.display="none";
             canvas2.style.display="none";
             canvas3.style.display="none";
             canvas4.style.display="none";
+            canvas5.style.display="none";
 
             var e = document.getElementById("chart");
             var value = e.value;
@@ -48,6 +54,7 @@
                 canvas2.style.display="none";
                 canvas3.style.display="none";
                 canvas4.style.display="none";
+                canvas5.style.display="none";
                 
                 var e = document.getElementById("chart");
                 var value = e.value;
